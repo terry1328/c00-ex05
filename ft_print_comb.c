@@ -17,33 +17,31 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	ft_print_comb2(void)
+void	ft_print_comb(void)
 {
-	char	first;
-	char	second;
-	char	last;
+	char	e;
+	char	f;
+	char	g;
 
-	first = '0';
-	while (first <= '7')
+	e = '0';
+	while (e <= '7')
 	{
-		second = first + 1;
-		while (second <= '8')
+		f = e;
+		while (++f  <= '8')
 		{
-			last = second + 1;
-			while (last <= '9')
+			g = f+ 1;
+			while (g <= '9')
 			{
-				ft_putchar(first);
-				ft_putchar(second);
-				ft_putchar(last);
-				if (first != '7')
+				ft_putchar(e);
+				ft_putchar(f);
+				ft_putchar(g);
+				if (e != '7' || f != '8' || g != '9')
 				{
-					ft_putchar(',');
-					ft_putchar(' ');
+					write(1, ", ", 2);
 				}
-				last++;
+				g++;
 			}
-		second++;
 		}
-first++;
+		e++;
 	}
 }
